@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
     <PackageId>Magicodes.IE.Html</PackageId>
+    <Configurations>Debug;Release;DebugIE</Configurations>
   </PropertyGroup>
 
   <ItemGroup>

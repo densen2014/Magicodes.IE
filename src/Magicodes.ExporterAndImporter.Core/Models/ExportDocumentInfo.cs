@@ -38,11 +38,18 @@ namespace Magicodes.ExporterAndImporter.Core.Models
                                      {
                                          DisplayName = propertyInfo.GetDisplayName() ?? propertyInfo.Name
                                      };
-                if (string.IsNullOrEmpty(exporterHeader.DisplayName))
+                if (!exporterHeader.IsIgnore)
                 {
-                    exporterHeader.DisplayName = propertyInfo.GetDisplayName() ?? propertyInfo.Name;
+                    if (string.IsNullOrEmpty(exporterHeader.DisplayName))
+                    {
+                        exporterHeader.DisplayName = propertyInfo.GetDisplayName() ?? propertyInfo.Name;
+                    }
+                    if (!string.IsNullOrEmpty(exporterHeader.Format))
+                    {
+                        //  exporterHeader..Format(result.Item2.Format);
+                    }
+                    Headers.Add(exporterHeader);
                 }
-                Headers.Add(exporterHeader);
             }
         }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Threading.Tasks;
 using AME.Models.Entity;
@@ -7,6 +8,8 @@ using DinkToPdf;
 using Magicodes.ExporterAndImporter.Excel;
 using Magicodes.ExporterAndImporter.Pdf;
 using Magicodes.ExporterAndImporter.Tests.Models.Export;
+using Magicodes.ExporterAndImporter.Core;
+using Magicodes.ExporterAndImporter.Core.Extension;
 
 // See https://aka.ms/new-console-template for more information
 Console.WriteLine("Hello, World!");
@@ -23,11 +26,12 @@ for (int i = 0; i < 10; i++)
         Total = i/100,
     });
 }
+ DataTable dt = items.ToDataTable();
 
 var exporterPdf = new PdfExporter();
 var resultPdf = await exporterPdf.ExportListByTemplate(filePath + ".pdf", items);
-var exporterXlsx = new ExcelExporter();
-var resultXlsx = await exporterXlsx.Export(filePath + ".xlsx", items);
+//var exporterXlsx = new ExcelExporter();
+//var resultXlsx = await exporterXlsx.Export(filePath + ".xlsx", items);
 
 Console.ReadKey();
 

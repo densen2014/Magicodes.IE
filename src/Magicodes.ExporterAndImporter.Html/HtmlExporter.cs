@@ -18,8 +18,11 @@ using RazorEngine;
 using RazorEngine.Configuration;
 using RazorEngine.Templating;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using Encoding = System.Text.Encoding;
 

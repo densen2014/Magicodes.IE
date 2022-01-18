@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>net461;netstandard2.0;netstandard2.1</TargetFrameworks>
     <PackageId>Magicodes.IE.Excel</PackageId>
+    <Configurations>Debug;Release;DebugIE</Configurations>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="DynamicExpresso.Core" Version="2.3.3" />
