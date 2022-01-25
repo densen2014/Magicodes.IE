@@ -7,6 +7,28 @@
     <Nullable>enable</Nullable>
     <Configurations>Debug;Release;DebugIE</Configurations>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="PDF导出模板.cshtml" />
+    <None Remove="PDF批量导出模板.cshtml" />
+    <None Remove="导出教材订购明细样表.xlsx" />
+    <None Remove="导出教材订购表.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="PDF导出模板.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PDF批量导出模板.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="导出教材订购明细样表.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="导出教材订购表.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\Magicodes.ExporterAndImporter.Core\Magicodes.IE.Core.csproj" />
 		<ProjectReference Include="..\Magicodes.ExporterAndImporter.Csv\Magicodes.IE.Csv.csproj" />
