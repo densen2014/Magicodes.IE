@@ -35,7 +35,7 @@ namespace Magicodes.ExporterAndImporter.Tests
             for (var i = 0; i < 500; i++)
                 items.Add(new BatchPortraitReceiptInfoDto
                 {
-                    Amount = 22939.43M,
+                    //Amount = 22939.43M,
                     Grade = "2019秋",
                     IdNo = "43062619890622xxxx",
                     Name = "张三",
