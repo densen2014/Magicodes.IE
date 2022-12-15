@@ -38,7 +38,7 @@ namespace Magicodes.ExporterAndImporter.Tests.Models.Export
         /// <summary>
         ///     金额
         /// </summary>
-        public decimal Amount { get; set; }
+        public decimal? Amount { get; set; }
 
         /// <summary>
         ///     支付方式

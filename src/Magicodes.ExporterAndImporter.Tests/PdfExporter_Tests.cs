@@ -15,6 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
+using DocumentFormat.OpenXml.Spreadsheet;
 using Magicodes.ExporterAndImporter.Pdf;
 using Magicodes.ExporterAndImporter.Tests.Models.Export;
 using Shouldly;
@@ -25,6 +26,32 @@ namespace Magicodes.ExporterAndImporter.Tests
 {
     public class PdfExporter_Tests : TestBase
     {
+        [Fact(DisplayName = "导出竖向排版收据")]
+        public async Task test111()
+        {
+            var exporterPdf = new PdfExporter();
+            var filePath = Path.Combine(Directory.GetCurrentDirectory(), nameof(test111) + ".pdf");
+            var items = new List<BatchPortraitReceiptInfoDto>();
+            for (var i = 0; i < 500; i++)
+                items.Add(new BatchPortraitReceiptInfoDto
+                {
+                    Amount = 22939.43M,
+                    Grade = "2019秋",
+                    IdNo = "43062619890622xxxx",
+                    Name = "张三",
+                    PaymentMethod = "微信支付",
+                    Profession = "运动训练",
+                    Remark = "学费",
+                    TradeStatus = "已完成",
+                    TradeTime = DateTime.Now,
+                    UppercaseAmount = "贰万贰仟玖佰叁拾玖圆肆角叁分",
+                    Code = "1907180000" + i
+                });
+
+            var resultPdf = await exporterPdf.ExportListByTemplate(filePath + ".pdf", items);
+ 
+        }
+
         [Fact(DisplayName = "导出竖向排版收据")]
         public async Task BathExportPortraitReceipt_Test()
         {
