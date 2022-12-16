@@ -11,45 +11,63 @@
 //
 // ======================================================================
 
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Threading.Tasks;
-using DocumentFormat.OpenXml.Spreadsheet;
+using Magicodes.ExporterAndImporter.Excel;
+using Magicodes.ExporterAndImporter.Html;
 using Magicodes.ExporterAndImporter.Pdf;
 using Magicodes.ExporterAndImporter.Tests.Models.Export;
+using Magicodes.ExporterAndImporter.Word;
+using Newtonsoft.Json;
+using OfficeOpenXml.Table;
 using Shouldly;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Threading.Tasks;
 using WkHtmlToPdfDotNet;
 using Xunit;
 
 namespace Magicodes.ExporterAndImporter.Tests
 {
+
+
+
     public class PdfExporter_Tests : TestBase
     {
-        [Fact(DisplayName = "导出竖向排版收据")]
+        public partial class Foo
+        {
+            public decimal UnitPrice { get; set; } = 1;
+            public decimal? UnitPrice2 { get; set; } = null;
+
+        }
+
+        [Fact(DisplayName = "可空字段数据为 null #471")]
         public async Task test111()
         {
-            var exporterPdf = new PdfExporter();
-            var filePath = Path.Combine(Directory.GetCurrentDirectory(), nameof(test111) + ".pdf");
-            var items = new List<BatchPortraitReceiptInfoDto>();
-            for (var i = 0; i < 500; i++)
-                items.Add(new BatchPortraitReceiptInfoDto
-                {
-                    //Amount = 22939.43M,
-                    Grade = "2019秋",
-                    IdNo = "43062619890622xxxx",
-                    Name = "张三",
-                    PaymentMethod = "微信支付",
-                    Profession = "运动训练",
-                    Remark = "学费",
-                    TradeStatus = "已完成",
-                    TradeTime = DateTime.Now,
-                    UppercaseAmount = "贰万贰仟玖佰叁拾玖圆肆角叁分",
-                    Code = "1907180000" + i
-                });
 
+
+
+            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "xxxx");
+            var items = new List<Foo>() { new Foo() };
+
+            var exporter = new ExcelExporter();
+            var result = await exporter.Export(filePath + ".xlsx", items);
+            Console.WriteLine(result.FileName);
+
+            var exporterWord = new WordExporter();
+            var resultWord = await exporterWord.ExportListByTemplate(filePath + ".docx", items);
+            Console.WriteLine(resultWord.FileName);
+
+            var exporterPdf = new PdfExporter();
             var resultPdf = await exporterPdf.ExportListByTemplate(filePath + ".pdf", items);
- 
+            Console.WriteLine(resultPdf.FileName);
+
+            var exporterHtml = new HtmlExporter();
+            var resultHtml = await exporterHtml.ExportListByTemplate(filePath + ".html", items);
+            Console.WriteLine(resultHtml.FileName);
+
+
+
         }
 
         [Fact(DisplayName = "导出竖向排版收据")]
