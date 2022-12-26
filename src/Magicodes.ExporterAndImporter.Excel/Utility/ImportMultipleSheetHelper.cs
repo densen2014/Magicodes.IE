@@ -940,7 +940,7 @@ namespace Magicodes.ExporterAndImporter.Excel.Utility
         /// <returns></returns>
         protected virtual ExcelWorksheet GetImportSheet(ExcelPackage excelPackage)
         {
-#if NET461
+#if NET48
             return excelPackage.Workbook.Worksheets[_importDataType.GetDisplayName()]??(
                  ExcelImporterSettings.SheetName != null?
                  excelPackage.Workbook.Worksheets[ExcelImporterSettings.SheetName] ??

@@ -8,7 +8,7 @@ namespace Magicodes.ExporterAndImporter.Tests.Models.Import
         [ExcelImporter(SheetName = "1班导入数据")]
         public ImportStudentDto Class1Students { get; set; }
 
-//#if NET461
+//#if NET48
 //        [ExcelImporter(SheetIndex = 2)]
 //#else
         [ExcelImporter(SheetIndex = 1)]

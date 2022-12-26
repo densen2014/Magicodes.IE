@@ -32,7 +32,7 @@ namespace Magicodes.ExporterAndImporter.Excel
         ///     在.NET Core+包括.NET5框架中下标从0开始，否则从 1 
         /// </remarks>
         public int SheetIndex { get; set; } =
-#if NET461
+#if NET48
             1
 #else
             0
