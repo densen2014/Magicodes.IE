@@ -132,7 +132,7 @@ namespace Magicodes.ExporterAndImporter.Tests
             {
                 //检查转换结果
                 pck.Workbook.Worksheets.Count.ShouldBe(2);
-//#if NET461
+//#if NET48
 //                pck.Workbook.Worksheets[0].Name.ShouldBe("1班导入数据");
 //                pck.Workbook.Worksheets[1].Name.ShouldBe("2班导入数据");
 //#else
