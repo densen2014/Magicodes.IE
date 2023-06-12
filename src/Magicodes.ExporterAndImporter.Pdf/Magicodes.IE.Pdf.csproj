@@ -2,15 +2,15 @@
   <Import Project="..\..\common.props"></Import>
 
   <PropertyGroup>
-    <TargetFrameworks>net461;netstandard2.0;netstandard2.1;</TargetFrameworks>
+    <TargetFrameworks>net48;netstandard2.0;netstandard2.1;</TargetFrameworks>
     <PackageId>Magicodes.IE.Pdf</PackageId>
   </PropertyGroup>
-  <!--<ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
+  <!--<ItemGroup Condition=" '$(TargetFramework)' == 'net48' ">
     <PackageReference Include="TuesPechkin" Version="2.1.1" />
     <PackageReference Include="TuesPechkin.Wkhtmltox.AnyCPU" Version="0.12.4.1" />
   </ItemGroup>-->
   <ItemGroup>
-	  <PackageReference Include="Haukcode.WkHtmlToPdfDotNet" Version="1.5.71" />
+	  <PackageReference Include="Haukcode.WkHtmlToPdfDotNet" Version="1.5.86" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Magicodes.ExporterAndImporter.Html\Magicodes.IE.Html.csproj" />

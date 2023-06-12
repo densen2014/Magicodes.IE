@@ -21,7 +21,7 @@ namespace Magicodes.ExporterAndImporter.Tests
     {
         public TestBase()
         {
-#if !NET461
+#if !net48
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
             //Encoding.UTF8
             Encoding.GetEncoding(65001);

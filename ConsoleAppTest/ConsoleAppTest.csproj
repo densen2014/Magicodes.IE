@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net48;net7.0</TargetFrameworks> 
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!--<PackageReference Include="Magicodes.IE.Core" Version="2.7.2" />
+    <PackageReference Include="Magicodes.IE.Excel" Version="2.7.2" />
+    <PackageReference Include="Magicodes.IE.Html" Version="2.7.2" />
+    <PackageReference Include="Magicodes.IE.Pdf" Version="2.7.2" />
+    <PackageReference Include="Magicodes.IE.Word" Version="2.7.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />-->
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\src\Magicodes.ExporterAndImporter.Core\Magicodes.IE.Core.csproj" />
+    <ProjectReference Include="..\src\Magicodes.ExporterAndImporter.Excel\Magicodes.IE.Excel.csproj" />
+    <ProjectReference Include="..\src\Magicodes.ExporterAndImporter.Html\Magicodes.IE.Html.csproj" />
+    <ProjectReference Include="..\src\Magicodes.ExporterAndImporter.Pdf\Magicodes.IE.Pdf.csproj" />
+    <ProjectReference Include="..\src\Magicodes.ExporterAndImporter.Word\Magicodes.IE.Word.csproj" />
+  </ItemGroup>
+
+</Project>

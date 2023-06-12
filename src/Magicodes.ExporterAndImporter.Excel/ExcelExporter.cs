@@ -89,7 +89,7 @@ namespace Magicodes.ExporterAndImporter.Excel
 
             if (_isSeparateColumn)
             {
-                //#if NET461
+                //#if net48
                 helper.CopySheet(0,
                     1);
                 //#else
@@ -102,7 +102,7 @@ namespace Magicodes.ExporterAndImporter.Excel
 
             if (_isSeparateByRow)
             {
-                //#if NET461
+                //#if net48
                 //                helper.CopyRows(0,
                 //                    1, _isAppendHeaders);
                 //#else

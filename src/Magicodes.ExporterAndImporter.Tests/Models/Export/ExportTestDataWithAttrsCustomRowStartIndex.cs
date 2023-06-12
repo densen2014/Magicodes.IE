@@ -24,7 +24,7 @@ using OfficeOpenXml.Table;
 using System;
 */
 
-/* 项目“Magicodes.ExporterAndImporter.Tests (net461)”的未合并的更改
+/* 项目“Magicodes.ExporterAndImporter.Tests (net48)”的未合并的更改
 在此之前:
 using System;
 using OfficeOpenXml.Table;

@@ -246,7 +246,7 @@ namespace Magicodes.ExporterAndImporter.Tests
             {
                 //验证Sheet数是否为3
                 pck.Workbook.Worksheets.Count.ShouldBe(3);
-                //请不要使用索引（NET461和.NET Core的Sheet索引值不一致）
+                //请不要使用索引（net48和.NET Core的Sheet索引值不一致）
                 var lastSheet = pck.Workbook.Worksheets.Last();
                 lastSheet.Cells[lastSheet.Dimension.Address].Rows.ShouldBe(100);
             }
@@ -263,7 +263,7 @@ namespace Magicodes.ExporterAndImporter.Tests
             {
                 //验证Sheet数是否为4
                 pck.Workbook.Worksheets.Count.ShouldBe(4);
-                //请不要使用索引（NET461和.NET Core的Sheet索引值不一致）
+                //请不要使用索引（net48和.NET Core的Sheet索引值不一致）
                 var lastSheet = pck.Workbook.Worksheets.Last();
                 lastSheet.Cells[lastSheet.Dimension.Address].Rows.ShouldBe(3);
             }
