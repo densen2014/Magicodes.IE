@@ -4,6 +4,8 @@
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<NoWarn>1591</NoWarn>
+		<AssemblyOriginatorKeyFile>..\keys\Longbow.Utility.snk</AssemblyOriginatorKeyFile>
+		<SignAssembly>True</SignAssembly>
 	</PropertyGroup>
 	<PropertyGroup>
 		<Authors>雪雁</Authors>
